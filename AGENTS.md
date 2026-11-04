@@ -30,27 +30,35 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - Run or verify with `scripts/ocr-check.js` on code changes.
 - Ensure strict sanitization against XSS, SQLi, and SEO spam doorway injections.
 
-# 🔐 Superadmin Management & Dynamic Content Architecture
-- **Admin Portal**: Accessible via `/admin` with protected routes.
+# 🔥 Firebase Cloud Architecture & Authentication
+- **Project Configuration**:
+  - Project ID: `recr-bd`
+  - Auth Domain: `recr-bd.firebaseapp.com`
+  - Storage Bucket: `recr-bd.firebasestorage.app`
+- **Authentication Providers**:
+  - Email & Password Login
+  - Google Sign-In (OAuth Popup & Redirect)
+  - Password Reset / Forgot Password flow
+  - Show / Hide password visibility toggle
 - **Superadmin Credentials**:
-  - Email: `super@recr.edu.bd`
-  - Password: `trynot9999*`
-- **Dynamic Content Engine**: Notices, Teachers/Management, and Admission applications are managed via a reactive, persistent state (`DataContext` with client-side synchronization and server fallbacks). Every single section is editable, addable, and deletable by the admin.
-- **High-Contrast Accessibility**: Ensure strict WCAG AAA contrast across all themes — never allow white-on-white text or invisible contact numbers.
-- **Real Institutional Assets**: Always prioritize real Rangpur Engineering College photos, banners, and leadership details over generic stock images.
+  - Authorized Admin: `acbd89507@gmail.com`
+  - Password: `ACBD507*`
+  - Auto-fill demo buttons are strictly prohibited in production UI.
 
-# 🧠 Autonomous 280+ Agency Agents Coordination (Zero Manual Overhead)
-- The entire 280+ Agency Agents repository is permanently installed locally at `C:\Users\missi\.gemini\agency-agents` and `C:\Users\missi\.claude\agents`.
-- The AI autonomously detects the task domain and assumes the specialist persona:
-  - **AppSec / Cybersecurity Specialist**: Incident triage, SEO spam doorway analysis, malware eradication, server hardening.
-  - **Frontend Developer / UI Designer**: Soft Neumorphism (Soft UI) aesthetic, WCAG AA contrast, 60fps micro-interactions, responsive mobile layout.
-  - **Technical SEO Specialist**: Canonical tags, XML sitemap, clean robots.txt, Google Search Console indexing recovery, JSON-LD Schema.
-  - **QA Engineer**: Build verification, error handling, Cross-browser compatibility.
+# 🌐 Clean Institutional Presentation & 100% Responsiveness
+- **Public Domain Cleanliness**: Remove all security alarms, vulnerability badges, and hack alert banners from the public facing home, navbar, and footer. Maintain prestigious educational college atmosphere.
+- **Accurate Institutional Location**: The location MUST always be spelled as **দখিগঞ্জ** (e.g. "জি. এল. রায় রোড, দখিগঞ্জ, মাহিগঞ্জ, রংপুর-৫৪০৩"). Never use ধোখীগঞ্জ or ধোকীগঞ্জ.
+- **Hero Section Dual Architecture (Image 1 Standard)**:
+  - Left: Auto-swiping / interactive carousel of real college memory photos, campus events, and students.
+  - Right: Principal quote & welcome speech card with oval framed photo of Col. (Retd.) M. A. Baten and direct View More link.
+- **Top Notice Marquee**: Continuous smooth right-to-left scrolling ticker on top for urgent notices and admission announcements.
+- **Full-Site Dynamic CMS (Admin Panel)**: Every single section, card, title, image, notice, teacher, leadership member, marquee text, and social link MUST be editable, addable, and deletable from `/admin`.
+- **Zero-Zoom Mobile Responsiveness**: UI must display cleanly at 100% viewport scale on any mobile device (320px - 1440px+) without horizontal scrolling or requiring 67% zoom out.
 
 # 🚀 Mandatory Autonomous GitHub & Vercel Push on Every Update
 - On EVERY completed task, bug fix, feature addition, or code change:
   1. Verify the project builds cleanly without errors (`npm run build` or `npx next build --webpack`).
   2. Stage all modifications and new untracked files (`git add .`).
   3. Commit with a clear, descriptive commit message explaining the updates.
-  4. Push to remote repository (`git push origin main` and `git push origin main:master`), triggering Vercel production deployment to `recrtest.vercel.app`.
-- NEVER ask the user if you should push. Deploy automatically as part of completing the task.
+  4. Push to remote repository (`git push origin main` and `git push origin main:master`), triggering Vercel production deployment.
+- ALWAYS place the commit hash on the very first line of the response.

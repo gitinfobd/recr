@@ -1,5 +1,5 @@
+import MarqueeNotice from '@/components/MarqueeNotice';
 import Navbar from '@/components/Navbar';
-import SecurityAlertBanner from '@/components/SecurityAlertBanner';
 import HeroBanner from '@/components/HeroBanner';
 import DepartmentsSection from '@/components/DepartmentsSection';
 import NoticeBoardSection from '@/components/NoticeBoardSection';
@@ -10,30 +10,30 @@ import Footer from '@/components/Footer';
 export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col bg-[var(--neu-bg)]">
-      {/* Top Navigation */}
+      {/* Top Scrolling Marquee Notice (Right to Left) */}
+      <MarqueeNotice />
+
+      {/* Main Navigation Header */}
       <Navbar />
 
-      {/* Prominent Security Notice Banner */}
-      <SecurityAlertBanner />
-
       <main className="flex-1">
-        {/* Hero Banner with Soft Neumorphism */}
+        {/* Official Hero Section: Left Campus Swiper, Right Principal Quote Card */}
         <HeroBanner />
 
-        {/* Engineering Departments (CSE, EEE, CE, ICE) */}
+        {/* 4 Accredited Engineering Departments */}
         <DepartmentsSection />
 
-        {/* Notice Board */}
+        {/* Live Academic & Exam Notice Board */}
         <NoticeBoardSection />
 
-        {/* Principal Desk & Campus Facilities */}
+        {/* Principal's Desk & Campus Facilities */}
         <PrincipalDeskSection />
 
-        {/* Online Admission Application Section */}
+        {/* Online Admission Application & High-Contrast Direct Helpline */}
         <AdmissionSection />
       </main>
 
-      {/* Global Footer */}
+      {/* Institutional Footer with Social Media Hub */}
       <Footer />
     </div>
   );
