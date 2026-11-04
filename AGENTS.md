@@ -30,23 +30,27 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - Run or verify with `scripts/ocr-check.js` on code changes.
 - Ensure strict sanitization against XSS, SQLi, and SEO spam doorway injections.
 
+# 🔐 Superadmin Management & Dynamic Content Architecture
+- **Admin Portal**: Accessible via `/admin` with protected routes.
+- **Superadmin Credentials**:
+  - Email: `super@recr.edu.bd`
+  - Password: `trynot9999*`
+- **Dynamic Content Engine**: Notices, Teachers/Management, and Admission applications are managed via a reactive, persistent state (`DataContext` with client-side synchronization and server fallbacks). Every single section is editable, addable, and deletable by the admin.
+- **High-Contrast Accessibility**: Ensure strict WCAG AAA contrast across all themes — never allow white-on-white text or invisible contact numbers.
+- **Real Institutional Assets**: Always prioritize real Rangpur Engineering College photos, banners, and leadership details over generic stock images.
+
 # 🧠 Autonomous 280+ Agency Agents Coordination (Zero Manual Overhead)
 - The entire 280+ Agency Agents repository is permanently installed locally at `C:\Users\missi\.gemini\agency-agents` and `C:\Users\missi\.claude\agents`.
 - The AI autonomously detects the task domain and assumes the specialist persona:
   - **AppSec / Cybersecurity Specialist**: Incident triage, SEO spam doorway analysis, malware eradication, server hardening.
-  - **Frontend Developer / UI Designer**: Soft Neumorphism (Soft UI) aesthetic, WCAG AA accessibility, 60fps micro-interactions, responsive mobile layout.
+  - **Frontend Developer / UI Designer**: Soft Neumorphism (Soft UI) aesthetic, WCAG AA contrast, 60fps micro-interactions, responsive mobile layout.
   - **Technical SEO Specialist**: Canonical tags, XML sitemap, clean robots.txt, Google Search Console indexing recovery, JSON-LD Schema.
   - **QA Engineer**: Build verification, error handling, Cross-browser compatibility.
 
 # 🚀 Mandatory Autonomous GitHub & Vercel Push on Every Update
 - On EVERY completed task, bug fix, feature addition, or code change:
-  1. Verify the project builds cleanly without errors (`npm run build`).
+  1. Verify the project builds cleanly without errors (`npm run build` or `npx next build --webpack`).
   2. Stage all modifications and new untracked files (`git add .`).
   3. Commit with a clear, descriptive commit message explaining the updates.
-  4. Push to remote repository (`git push origin main`), triggering Vercel production deployment to `recrtest.vercel.app`.
+  4. Push to remote repository (`git push origin main` and `git push origin main:master`), triggering Vercel production deployment to `recrtest.vercel.app`.
 - NEVER ask the user if you should push. Deploy automatically as part of completing the task.
-
-# 🔍 3-Tier SEO & Generative Engine Optimization (GEO) Protocol
-- **Tier 1 — Search Telemetry**: Monitor Google Search Console indexing status and eradicate malicious foreign URLs from SERPs.
-- **Tier 2 — Semantic Intent**: Educational institution keyword intent mapping for Rangpur Engineering College (B.Sc. in CSE, EEE, CE, ICE).
-- **Tier 3 — GEO & AI Discovery**: Clean schema (`CollegeOrUniversity`, `EducationalOrganization`), valid `llms.txt`, and authorized AI bot indexing while blocking scrapers.

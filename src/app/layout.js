@@ -1,4 +1,5 @@
 import './globals.css';
+import { DataProvider } from '@/context/DataContext';
 
 export const metadata = {
   title: 'রংপুর ইঞ্জিনিয়ারিং কলেজ | Rangpur Engineering College (REC)',
@@ -23,10 +24,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="bn" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%2315803d'/><text x='50' y='65' font-size='45' font-family='sans-serif' font-weight='bold' fill='white' text-anchor='middle'>REC</text></svg>" />
+        <link rel="icon" href="/logo.jpg" />
       </head>
       <body className="min-h-screen flex flex-col antialiased selection:bg-emerald-600 selection:text-white">
-        {children}
+        <DataProvider>
+          {children}
+        </DataProvider>
       </body>
     </html>
   );
