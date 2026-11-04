@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybersecurity Audit Report - Rangpur Engineering College (RECR)</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+    
+    :root {
+      --primary: #15803d;
+      --primary-dark: #166534;
+      --danger: #dc2626;
+      --danger-bg: #fef2f2;
+      --warning: #d97706;
+      --dark: #0f172a;
+      --gray: #475569;
+      --border: #e2e8f0;
+      --bg: #f8fafc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Hind Siliguri', 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--dark);
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 50px 60px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--border);
+    }
+
+    .header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 25px;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .header-logo-area {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .college-crest {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, #15803d, #166534);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(21, 128, 61, 0.3);
+    }
+
+    .college-title h1 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      letter-spacing: -0.5px;
+    }
+
+    .college-title p {
+      font-size: 14px;
+      color: var(--gray);
+    }
+
+    .report-badge {
+      background: var(--danger-bg);
+      color: var(--danger);
+      border: 1px solid #fecaca;
+      padding: 8px 16px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      background: #f1f5f9;
+      padding: 16px 20px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      font-size: 14px;
+    }
+
+    .meta-item strong {
+      display: block;
+      color: var(--gray);
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-top: 35px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .alert-box {
+      background: #fff1f2;
+      border-left: 5px solid var(--danger);
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 25px;
+    }
+
+    .alert-box h3 {
+      color: var(--danger);
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 12px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background-color: #f8fafc;
+      font-weight: 600;
+      color: var(--gray);
+    }
+
+    .badge-critical {
+      background: #fee2e2;
+      color: #b91c1c;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 12px;
+    }
+
+    .badge-high {
+      background: #ffedd5;
+      color: #c2410c;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 12px;
+    }
+
+    .code-block {
+      background: #0f172a;
+      color: #38bdf8;
+      padding: 16px;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 13px;
+      overflow-x: auto;
+      margin: 12px 0;
+      line-height: 1.5;
+    }
+
+    .step-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    }
+
+    .step-card h4 {
+      color: var(--primary-dark);
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .action-btn-bar {
+      display: flex;
+      gap: 15px;
+      margin-top: 35px;
+      padding-top: 25px;
+      border-top: 2px solid var(--border);
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-secondary {
+      background: #e2e8f0;
+      color: var(--dark);
+    }
+
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      .container {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .action-btn-bar {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <div class="header-logo-area">
+        <div class="college-crest">REC</div>
+        <div class="college-title">
+          <h1>রংপুর ইঞ্জিনিয়ারিং কলেজ</h1>
+          <p>Rangpur Engineering College (Affiliated with University of Rajshahi)</p>
+        </div>
+      </div>
+      <div class="report-badge">🚨 CRITICAL AUDIT REPORT</div>
+    </div>
+
+    <!-- Metadata -->
+    <div class="meta-grid">
+      <div class="meta-item">
+        <strong>টার্গেট ডোমেন</strong>
+        https://www.recr.edu.bd/
+      </div>
+      <div class="meta-item">
+        <strong>আক্রান্ত ইউআরএল</strong>
+        https://www.recr.edu.bd/alumni
+      </div>
+      <div class="meta-item">
+        <strong>তারিখ ও সময়</strong>
+        ৪ নভেম্বর, ২০২৬
+      </div>
+      <div class="meta-item">
+        <strong>ঝুঁকি মূল্যায়ন (CVSS)</strong>
+        9.3 / 10 (Critical)
+      </div>
+    </div>
+
+    <!-- Alert Box -->
+    <div class="alert-box">
+      <h3>⚠️ নির্বাহী পর্যালোচনা ও স্যারের জ্ঞাতার্থে বিবরণ</h3>
+      <p>রংপুর ইঞ্জিনিয়ারিং কলেজের অফিসিয়াল ওয়েবসাইটের <strong>/alumni</strong> পেজটি হ্যাক করে আন্তর্জাতিক ইন্দোনেশিয়ান জুয়া চক্রের বেটিং বিজ্ঞাপন (HOTDEPO Slot777 / Judi Online) বসানো হয়েছে। এটি কলেজের জন্য গুরুতর সুনামের ক্ষতি এবং এর ফলে যেকোনো সময় গুগল সাইটটিকে ব্লক ("This site may be hacked") করতে পারে। নিচে এর প্রযুক্তিগত কারণ ও সমাধানের উপায় বিস্তারিত উপস্থাপন করা হলো।</p>
+    </div>
+
+    <!-- Section 1 -->
+    <h2 class="section-title">১. কেন কলেজের পেজে জুয়ার বিজ্ঞাপন দেখাচ্ছে? (Root Cause)</h2>
+    <p>আমাদের সাইবার সিকিউরিটি স্ক্যানে প্রাপ্ত সুনির্দিষ্ট কারণসমূহ:</p>
+    <ul style="margin-left: 20px; margin-top: 10px; margin-bottom: 20px;">
+      <li><strong>ডোমেন অথরিটি (.edu.bd) অপব্যবহার:</strong> সার্চ ইঞ্জিনে শিক্ষাপ্রতিষ্ঠানের ডোমেনের ট্রাস্ট ও ডোমেন রেটিং অনেক বেশি থাকে। হ্যাকাররা তাদের অবৈধ জুয়ার সাইটকে গুগলে এক নম্বরে র‍্যাঙ্ক করাতে কলেজের পেজকে "Doorway Page" হিসেবে ব্যবহার করছে।</li>
+      <li><strong>লারাভেল রাউটিং বাইপাস:</strong> কলেজের মূল সাইটটি Laravel (PHP)-তে তৈরি। কিন্তু আক্রমণকারীরা ওয়েব রুটে সরাসরি <code>public_html/alumni/index.php</code> ফাইল ইনজেক্ট করেছে। ফলে ওয়েব সার্ভার (LiteSpeed) লারাভেলের স্বাভাবিক রাউট বাইপাস করে সরাসরি হ্যাকারের স্ক্রিপ্ট রান করাচ্ছে।</li>
+      <li><strong>আক্রমণকারীর গুগল ভেরিফিকেশন:</strong> আক্রমণকারীরা মেটা ট্যাগে তাদের গুগল সার্চ কনসোল ভেরিফিকেশন কোড (<code>ns6qi_nRNLevMVdzlVFK2EYPC_FNWcOOlWuRbkGnhCU</code>) যুক্ত করেছে।</li>
+      <li><strong>স্প্যাম রিডাইরেকশন:</strong> মোবাইলে ঢুকলে স্বয়ংক্রিয়ভাবে ক্লাউডফ্লেয়ার পেজের মাধ্যমে (<code>https://admin-hotdepo.pages.dev/</code>) জুয়ার পোর্টালে ভিজিটরকে পাঠিয়ে দেওয়া হচ্ছে।</li>
+    </ul>
+
+    <!-- Section 2 -->
+    <h2 class="section-title">২. প্রযুক্তিগত অডিট ম্যাট্রিক্স</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>প্যারামিটার</th>
+          <th>প্রাপ্ত ডাটা</th>
+          <th>ঝুঁকি স্তর</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>আক্রান্ত ফাইল</td>
+          <td><code>/alumni/index.php</code></td>
+          <td><span class="badge-critical">CRITICAL</span></td>
+        </tr>
+        <tr>
+          <td>সার্ভার আইপি ও টেকনোলজি</td>
+          <td>50.28.37.166 (LiteSpeed, Laravel PHP)</td>
+          <td><span class="badge-high">HIGH</span></td>
+        </tr>
+        <tr>
+          <td>ইনজেক্টেড টাইটেল</td>
+          <td>HOTDEPO: Link Viral Gampang Menang Situs Slot777 Resmi</td>
+          <td><span class="badge-critical">CRITICAL</span></td>
+        </tr>
+        <tr>
+          <td>HTTP সিকিউরিটি হেডার্স</td>
+          <td>HSTS, CSP, X-Frame-Options সব অনুপস্থিত</td>
+          <td><span class="badge-high">HIGH</span></td>
+        </tr>
+        <tr>
+          <td>প্রকাশ্য অ্যাডমিন গেটওয়ে</td>
+          <td>/cpanel (2083) ও /webmail (2096) উন্মুক্ত</td>
+          <td><span class="badge-high">HIGH</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Section 3 -->
+    <h2 class="section-title">৩. পয়েন্ট-টু-পয়েন্ট সমাধানের পদক্ষেপ</h2>
+
+    <div class="step-card">
+      <h4>পদক্ষেপ ১: সিপ্যানেল থেকে হ্যাক ফোল্ডার অবিলম্বে মুছে ফেলা</h4>
+      <p>সিপ্যানেল ফাইল ম্যানেজারে ঢুকে <code>public_html/alumni</code> ফোল্ডারটি সরাসরি সম্পূর্ণ ডিলিট করে দিন। এতে পেজে জুয়ার বিজ্ঞাপন আসা সাথে সাথে বন্ধ হয়ে যাবে।</p>
+    </div>
+
+    <div class="step-card">
+      <h4>পদক্ষেপ ২: ক্ষতিকর ব্যাকডোর ও ম্যালওয়্যার স্ক্যান করা</h4>
+      <p>সার্ভারের টার্মিনাল বা SSH-এ গিয়ে নিচের কমান্ডটি চালান:</p>
+      <div class="code-block">find /home/*/public_html/ -name "*.php" -type f -mtime -60 | xargs grep -rnE '(base64_decode|eval\(|gzinflate)'</div>
+      <p>সন্দেহজনক কোনো ফাইল পেলে তা কোয়ারেন্টাইন বা ডিলিট করুন।</p>
+    </div>
+
+    <div class="step-card">
+      <h4>পদক্ষেপ ৩: গুগল সার্চ কনসোল থেকে টোকেন বাতিল ও URL রিমুভ</h4>
+      <p>গুগল সার্চ কনসোলে গিয়ে মেটা ভেরিফিকেশন থেকে আক্রমণকারীর কোড বাতিল করুন এবং <code>/alumni</code> ইউআরএল-এর জন্য গুগল থেকে সাময়িক রিমুভাল রিকোয়েস্ট পাঠিয়ে পুনরায় ফ্রেশ ইনডেক্সিং রিকোয়েস্ট সাবমিট করুন।</p>
+    </div>
+
+    <div class="step-card">
+      <h4>পদক্ষেপ ৪: আপলোড ডিরেক্টরিতে PHP এক্সিকিউশন নিষিদ্ধ করা</h4>
+      <p>কলেজের <code>public_html/uploads/.htaccess</code> ফাইলে নিচের রুল যুক্ত করুন:</p>
+      <div class="code-block">&lt;Files *.php&gt;<br>&nbsp;&nbsp;Order Deny,Allow<br>&nbsp;&nbsp;Deny from all<br>&lt;/Files&gt;</div>
+    </div>
+
+    <div class="step-card">
+      <h4>পদক্ষেপ ৫: ক্লাউডফ্লেয়ার (Cloudflare) WAF যুক্ত করা ও পাসওয়ার্ড পরিবর্তন</h4>
+      <p>সিপ্যানেল পাসওয়ার্ড পরিবর্তন করে 2-ফ্যাক্টর অথেনটিকেশন (2FA) চালু করুন এবং ক্লাউডফ্লেয়ার ফ্রি WAF দিয়ে সাইটকে ডিডিওএস ও ক্ষতিকর বট ট্রাফিক থেকে সুরক্ষিত করুন।</p>
+    </div>
+
+    <!-- Buttons -->
+    <div class="action-btn-bar">
+      <button class="btn btn-primary" onclick="window.print()">🖨️ প্রিন্ট করুন বা PDF হিসেবে সংরক্ষণ করুন</button>
+      <a href="https://recrtest.vercel.app" target="_blank" class="btn btn-secondary">🌐 সুরক্ষিত নিউমরফিজম প্রিভিউ সাইট দেখুন</a>
+    </div>
+
+    <div style="margin-top: 40px; font-size: 13px; color: var(--gray); text-align: center; border-top: 1px solid var(--border); padding-top: 15px;">
+      রংপুর ইঞ্জিনিয়ারিং কলেজ সাইবার সিকিউরিটি সেল • সর্বস্বত্ব সংরক্ষিত © ২০২৬
+    </div>
+  </div>
+
+</body>
+</html>
