@@ -48,6 +48,10 @@ export default function ManagementPage() {
                     src={leader.image}
                     alt={leader.name}
                     className="w-full h-full object-cover object-top"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = '/logo.jpg';
+                    }}
                   />
                   <div className="absolute top-3 left-3 neu-badge text-[11px] font-bold bg-white/90 text-emerald-800">
                     {leader.designation}

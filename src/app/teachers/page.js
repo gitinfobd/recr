@@ -108,6 +108,10 @@ export default function TeachersPage() {
                       src={teacher.image}
                       alt={teacher.name}
                       className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = '/logo.jpg';
+                      }}
                     />
                   </div>
 
