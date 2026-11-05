@@ -91,7 +91,7 @@ NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
 ```bash
 npm run dev
 ```
-ব্রাউজারে ভিজিট করুন: [http://localhost:3000](http://localhost:3000)
+ব্রাউজারে ভিজিট করুন: [(https://www.freeappweb.com/)
 
 ### ৫. প্রোডাকশন বিল্ড
 ```bash
