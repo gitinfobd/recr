@@ -200,32 +200,6 @@ body {
   100% { transform: translateX(-50%); }
 }
 
-/* ════════════════════════════════════════════════════════════════
-   DROPDOWN FIX - Keep dropdown visible when moving mouse to it
-   ════════════════════════════════════════════════════════════════ */
-.nav-dropdown-trigger {
-  position: relative;
-}
-
-.nav-dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  padding-top: 0.25rem;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-4px);
-  transition: all 0.15s ease;
-  z-index: 50;
-}
-
-.nav-dropdown-trigger:hover .nav-dropdown-menu,
-.nav-dropdown-menu:hover {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;

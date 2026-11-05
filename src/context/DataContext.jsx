@@ -62,7 +62,7 @@ export const INITIAL_PRINCIPAL_CARD = {
   quote: 'As the Principal of Rangpur Engineering College, I warmly welcome you to the inspiring world of science, technology, and innovation. Together, let\'s shape the future..',
   name: 'Col. (Retd.) M. A. Baten',
   designation: 'Principal, Rangpur Engineering College',
-  image: 'https://www.recr.edu.bd/images/chairman/chairman.png',
+  image: '/principal-baten.jpg',
   buttonText: 'VIEW MORE',
   buttonLink: '/management#leadership'
 };
@@ -98,7 +98,7 @@ export const INITIAL_LEADERSHIP = [
     designationBn: 'অধ্যক্ষ',
     phone: '01711-000000',
     email: 'principal@recr.edu.bd',
-    image: 'https://www.recr.edu.bd/images/chairman/chairman.png',
+    image: '/principal-baten.jpg',
     bio: 'সুদীর্ঘ সামরিক ও একাডেমিক অভিজ্ঞতা সম্পন্ন ব্যক্তিত্ব। রংপুর ইঞ্জিনিয়ারিং কলেজের সার্বিক শিক্ষা কার্যক্রম ও শৃঙ্খলার প্রধান কর্ণধার।'
   }
 ];
@@ -229,6 +229,34 @@ export function DataProvider({ children }) {
     }
   }, []);
 
+  // Sanitize incoming data to replace any stale placeholder/Unsplash images
+  const sanitizeData = (key, data) => {
+    if (!data) return data;
+    if (key === 'principal') {
+      if (!data.image || data.image.includes('unsplash.com') || data.image.includes('chairman.png')) {
+        return { ...data, image: '/principal-baten.jpg' };
+      }
+    }
+    if (key === 'leadership' && Array.isArray(data)) {
+      return data.map((l) => {
+        if (l.id === 'lead-3' && (!l.image || l.image.includes('unsplash.com') || l.image.includes('chairman.png'))) {
+          return { ...l, image: '/principal-baten.jpg' };
+        }
+        return l;
+      });
+    }
+    if (key === 'teachers' && Array.isArray(data)) {
+      return data.map((t) => {
+        if (!t.image || t.image.includes('unsplash.com')) {
+          const match = INITIAL_TEACHERS.find((it) => it.id === t.id || it.name === t.name);
+          if (match) return { ...t, image: match.image };
+        }
+        return t;
+      });
+    }
+    return data;
+  };
+
   // Load from Firestore, fallback to localStorage
   useEffect(() => {
     let unsubscribes = [];
@@ -252,14 +280,18 @@ export function DataProvider({ children }) {
           // Try Firestore realtime listener
           const unsub = onSnapshot(doc(db, 'recr_data', col.key), (snap) => {
             if (snap.exists() && snap.data()?.data) {
-              col.setter(snap.data().data);
-              localStorage.setItem(col.local, JSON.stringify(snap.data().data));
+              const cleaned = sanitizeData(col.key, snap.data().data);
+              col.setter(cleaned);
+              localStorage.setItem(col.local, JSON.stringify(cleaned));
             }
           }, (err) => {
             // Firestore failed, try localStorage
             try {
               const saved = localStorage.getItem(col.local);
-              if (saved) col.setter(JSON.parse(saved));
+              if (saved) {
+                const cleaned = sanitizeData(col.key, JSON.parse(saved));
+                col.setter(cleaned);
+              }
             } catch (e) { /* use initial */ }
           });
           unsubscribes.push(unsub);
@@ -267,7 +299,10 @@ export function DataProvider({ children }) {
           // Fallback to localStorage
           try {
             const saved = localStorage.getItem(col.local);
-            if (saved) col.setter(JSON.parse(saved));
+            if (saved) {
+              const cleaned = sanitizeData(col.key, JSON.parse(saved));
+              col.setter(cleaned);
+            }
           } catch (err) { /* use initial */ }
         }
       }

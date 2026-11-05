@@ -149,12 +149,12 @@ export default function HeroBanner() {
               {/* Oval Framed Photo with Golden Border (Image 1 style) */}
               <div className="mt-4 mx-auto w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-4 border-amber-400 shadow-xl bg-slate-900 relative">
                 <img
-                  src={principalCard?.image || 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80'}
+                  src={principalCard?.image || '/principal-baten.jpg'}
                   alt={principalCard?.name || 'Principal, Rangpur Engineering College'}
                   className="w-full h-full object-cover object-top"
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80';
+                    e.target.src = '/principal-baten.jpg';
                   }}
                 />
               </div>
