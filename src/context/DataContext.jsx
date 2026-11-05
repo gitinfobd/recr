@@ -139,22 +139,22 @@ export const INITIAL_DEPARTMENTS = [
 ];
 
 export const INITIAL_TEACHERS = [
-  { id: 't-cse-1', name: 'Jnananjan Roy', nameBn: 'জ্ঞানরঞ্জন রায়', department: 'CSE', designation: 'Lecturer', qualification: 'B.Sc. in CSE (SUST)', email: 'jnananjan.cse@recr.edu.bd', phone: '01700-111001', image: 'https://www.recr.edu.bd/images/teacher/Jnananjan%20Roy.png' },
-  { id: 't-cse-2', name: 'Dipanjan Das Dipto', nameBn: 'দীপাঞ্জন দাস দীপ্ত', department: 'CSE', designation: 'Lecturer', qualification: 'B.Sc. in CSE (AIUB)', email: 'dipanjan.cse@recr.edu.bd', phone: '01700-111002', image: 'https://www.recr.edu.bd/images/teacher/Dipanjan%20Das%20Dipto.png' },
-  { id: 't-cse-3', name: 'Md. Tarikul Islam', nameBn: 'মোঃ তারিকুল ইসলাম', department: 'CSE', designation: 'Lecturer', qualification: 'B.Sc. in CSE (PUST)', email: 'tarikul.cse@recr.edu.bd', phone: '01700-111003', image: 'https://www.recr.edu.bd/images/teacher/Md.%20Tarikul%20Islam.png' },
-  { id: 't-cse-4', name: 'Md. Maskur Al Shal Sabil', nameBn: 'মোঃ মাসকুর আল শাল সাবিল', department: 'CSE', designation: 'Lecturer', qualification: 'B.Sc. in CSE (RU)', email: 'maskur.cse@recr.edu.bd', phone: '01700-111004', image: 'https://www.recr.edu.bd/images/teacher/MD.%20Maskur%20Al%20Shal%20Sabil.png' },
-  { id: 't-cse-5', name: 'Md. Mezanur Rahman', nameBn: 'মোঃ মিজানুর রহমান', department: 'CSE', designation: 'Senior Lab Assistant', qualification: 'Diploma in Computer Technology', email: 'mezanur.cse@recr.edu.bd', phone: '01700-111005', image: 'https://www.recr.edu.bd/images/teacher/Md.%20Mezanur%20Rahman.png' },
-  { id: 't-eee-1', name: 'Aman Ullah Aman', nameBn: 'আমান উল্লাহ আমান', department: 'EEE', designation: 'Lecturer & Coordinator', qualification: 'B.Sc. in EEE (RUET)', email: 'aman.eee@recr.edu.bd', phone: '01700-222001', image: 'https://www.recr.edu.bd/images/teacher/Aman%20Ullah%20Aman.png' },
-  { id: 't-eee-2', name: 'Amena Akter', nameBn: 'আমেনা আক্তার', department: 'EEE', designation: 'Lecturer', qualification: 'B.Sc. in EEE (RU)', email: 'amena.eee@recr.edu.bd', phone: '01700-222002', image: 'https://www.recr.edu.bd/images/teacher/Amena%20Akter.png' },
-  { id: 't-eee-3', name: 'Polas Chandra Roy', nameBn: 'পলাশ চন্দ্র রায়', department: 'EEE', designation: 'Lecturer', qualification: 'B.Sc. in EEE (RU)', email: 'polas.eee@recr.edu.bd', phone: '01700-222003', image: 'https://www.recr.edu.bd/images/teacher/Polas%20Chandra%20Roy.png' },
-  { id: 't-eee-4', name: 'Jubayer Ahmmed', nameBn: 'জুবায়ের আহমেদ', department: 'EEE', designation: 'Lecturer', qualification: 'B.Sc. in EEE (KUET)', email: 'jubayer.eee@recr.edu.bd', phone: '01700-222004', image: 'https://www.recr.edu.bd/images/teacher/Untitlsdsed-1.png' },
-  { id: 't-ce-1', name: 'Sajedur Rahman', nameBn: 'সাজেদুর রহমান', department: 'CE', designation: 'Assistant Professor & Head', qualification: 'B.Sc. in Civil Eng. (RUET), M.Sc.', email: 'sajedur.ce@recr.edu.bd', phone: '01700-333001', image: 'https://www.recr.edu.bd/images/teacher/sajedur%20rahman-CE%20HEAD%20(2).png' },
-  { id: 't-ce-2', name: 'Jarif Ferdous Rashik', nameBn: 'জারিফ ফেরদৌস রাশিক', department: 'CE', designation: 'Lecturer', qualification: 'B.Sc. in Civil Eng. (AUST)', email: 'jarif.ce@recr.edu.bd', phone: '01700-333002', image: 'https://www.recr.edu.bd/images/teacher/Jarif%20Ferdous%20Rashik.png' },
-  { id: 't-ce-3', name: 'Md. Mahamudul Hasan', nameBn: 'মোঃ মাহমুদুল হাসান', department: 'CE', designation: 'Lecturer', qualification: 'B.Sc. in Civil Eng. (RUET)', email: 'mahamudul.ce@recr.edu.bd', phone: '01700-333003', image: 'https://www.recr.edu.bd/images/teacher/Md.%20Mahamudul%20Hasan.png' },
-  { id: 't-ice-1', name: 'Md. al-Hafiz', nameBn: 'মোঃ আল-হাফিজ', department: 'ICE', designation: 'Lecturer & Coordinator', qualification: 'B.Sc. & M.Sc. in ICE (RU)', email: 'alhafiz.ice@recr.edu.bd', phone: '01700-444001', image: 'https://www.recr.edu.bd/images/teacher/Md.al-Hafiz.png' },
-  { id: 't-ice-2', name: 'Imran Hossen', nameBn: 'ইমরান হোসেন', department: 'ICE', designation: 'Lecturer', qualification: 'B.Sc. & M.Sc. in ICE (RU)', email: 'imran.ice@recr.edu.bd', phone: '01700-444002', image: 'https://www.recr.edu.bd/images/teacher/Imran%20Hossen.png' },
-  { id: 't-sci-1', name: 'Md. Shahadat Hossain', nameBn: 'মোঃ শাহাদাত হোসেন', department: 'Science', designation: 'Assistant Professor (Physics)', qualification: 'M.Sc. in Physics (RU)', email: 'shahadat.phy@recr.edu.bd', phone: '01700-555001', image: 'https://www.recr.edu.bd/images/teacher/Md.%20Shahadat%20Hossain.png' },
-  { id: 't-sci-2', name: 'Rokshana Sabnom', nameBn: 'রোকসানা শবনম', department: 'Science', designation: 'Assistant Professor (Chemistry)', qualification: 'M.Sc. in Chemistry (RU)', email: 'rokshana.chem@recr.edu.bd', phone: '01700-555002', image: 'https://www.recr.edu.bd/images/teacher/Rokshana%20Sabnom.png' }
+  { id: 't-cse-1', name: 'Jnananjan Roy', nameBn: 'জ্ঞানরঞ্জন রায়', department: 'CSE', designation: 'Lecturer', qualification: 'B.Sc. in CSE (SUST)', email: 'jnananjan.cse@recr.edu.bd', phone: '01700-111001', image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80' },
+  { id: 't-cse-2', name: 'Dipanjan Das Dipto', nameBn: 'দীপাঞ্জন দাস দীপ্ত', department: 'CSE', designation: 'Lecturer', qualification: 'B.Sc. in CSE (AIUB)', email: 'dipanjan.cse@recr.edu.bd', phone: '01700-111002', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80' },
+  { id: 't-cse-3', name: 'Md. Tarikul Islam', nameBn: 'মোঃ তারিকুল ইসলাম', department: 'CSE', designation: 'Lecturer', qualification: 'B.Sc. in CSE (PUST)', email: 'tarikul.cse@recr.edu.bd', phone: '01700-111003', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80' },
+  { id: 't-cse-4', name: 'Md. Maskur Al Shal Sabil', nameBn: 'মোঃ মাসকুর আল শাল সাবিল', department: 'CSE', designation: 'Lecturer', qualification: 'B.Sc. in CSE (RU)', email: 'maskur.cse@recr.edu.bd', phone: '01700-111004', image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80' },
+  { id: 't-cse-5', name: 'Md. Mezanur Rahman', nameBn: 'মোঃ মিজানুর রহমান', department: 'CSE', designation: 'Senior Lab Assistant', qualification: 'Diploma in Computer Technology', email: 'mezanur.cse@recr.edu.bd', phone: '01700-111005', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80' },
+  { id: 't-eee-1', name: 'Aman Ullah Aman', nameBn: 'আমান উল্লাহ আমান', department: 'EEE', designation: 'Lecturer & Coordinator', qualification: 'B.Sc. in EEE (RUET)', email: 'aman.eee@recr.edu.bd', phone: '01700-222001', image: 'https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=400&q=80' },
+  { id: 't-eee-2', name: 'Amena Akter', nameBn: 'আমেনা আক্তার', department: 'EEE', designation: 'Lecturer', qualification: 'B.Sc. in EEE (RU)', email: 'amena.eee@recr.edu.bd', phone: '01700-222002', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80' },
+  { id: 't-eee-3', name: 'Polas Chandra Roy', nameBn: 'পলাশ চন্দ্র রায়', department: 'EEE', designation: 'Lecturer', qualification: 'B.Sc. in EEE (RU)', email: 'polas.eee@recr.edu.bd', phone: '01700-222003', image: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=400&q=80' },
+  { id: 't-eee-4', name: 'Jubayer Ahmmed', nameBn: 'জুবায়ের আহমেদ', department: 'EEE', designation: 'Lecturer', qualification: 'B.Sc. in EEE (KUET)', email: 'jubayer.eee@recr.edu.bd', phone: '01700-222004', image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80' },
+  { id: 't-ce-1', name: 'Sajedur Rahman', nameBn: 'সাজেদুর রহমান', department: 'CE', designation: 'Assistant Professor & Head', qualification: 'B.Sc. in Civil Eng. (RUET), M.Sc.', email: 'sajedur.ce@recr.edu.bd', phone: '01700-333001', image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80' },
+  { id: 't-ce-2', name: 'Jarif Ferdous Rashik', nameBn: 'জারিফ ফেরদৌস রাশিক', department: 'CE', designation: 'Lecturer', qualification: 'B.Sc. in Civil Eng. (AUST)', email: 'jarif.ce@recr.edu.bd', phone: '01700-333002', image: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=400&q=80' },
+  { id: 't-ce-3', name: 'Md. Mahamudul Hasan', nameBn: 'মোঃ মাহমুদুল হাসান', department: 'CE', designation: 'Lecturer', qualification: 'B.Sc. in Civil Eng. (RUET)', email: 'mahamudul.ce@recr.edu.bd', phone: '01700-333003', image: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=400&q=80' },
+  { id: 't-ice-1', name: 'Md. al-Hafiz', nameBn: 'মোঃ আল-হাফিজ', department: 'ICE', designation: 'Lecturer & Coordinator', qualification: 'B.Sc. & M.Sc. in ICE (RU)', email: 'alhafiz.ice@recr.edu.bd', phone: '01700-444001', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80' },
+  { id: 't-ice-2', name: 'Imran Hossen', nameBn: 'ইমরান হোসেন', department: 'ICE', designation: 'Lecturer', qualification: 'B.Sc. & M.Sc. in ICE (RU)', email: 'imran.ice@recr.edu.bd', phone: '01700-444002', image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80' },
+  { id: 't-sci-1', name: 'Md. Shahadat Hossain', nameBn: 'মোঃ শাহাদাত হোসেন', department: 'Science', designation: 'Assistant Professor (Physics)', qualification: 'M.Sc. in Physics (RU)', email: 'shahadat.phy@recr.edu.bd', phone: '01700-555001', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80' },
+  { id: 't-sci-2', name: 'Rokshana Sabnom', nameBn: 'রোকসানা শবনম', department: 'Science', designation: 'Assistant Professor (Chemistry)', qualification: 'M.Sc. in Chemistry (RU)', email: 'rokshana.chem@recr.edu.bd', phone: '01700-555002', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80' }
 ];
 
 export const INITIAL_NOTICES = [
@@ -229,17 +229,17 @@ export function DataProvider({ children }) {
     }
   }, []);
 
-  // Sanitize incoming data to replace any stale placeholder/Unsplash images
+  // Sanitize incoming data to replace any broken recr.edu.bd links
   const sanitizeData = (key, data) => {
     if (!data) return data;
     if (key === 'principal') {
-      if (!data.image || data.image.includes('unsplash.com') || data.image.includes('chairman.png')) {
+      if (!data.image || data.image.includes('recr.edu.bd/images/')) {
         return { ...data, image: '/principal-baten.jpg' };
       }
     }
     if (key === 'leadership' && Array.isArray(data)) {
       return data.map((l) => {
-        if (l.id === 'lead-3' && (!l.image || l.image.includes('unsplash.com') || l.image.includes('chairman.png'))) {
+        if (l.id === 'lead-3' && (!l.image || l.image.includes('recr.edu.bd/images/'))) {
           return { ...l, image: '/principal-baten.jpg' };
         }
         return l;
@@ -247,7 +247,7 @@ export function DataProvider({ children }) {
     }
     if (key === 'teachers' && Array.isArray(data)) {
       return data.map((t) => {
-        if (!t.image || t.image.includes('unsplash.com')) {
+        if (!t.image || t.image.includes('recr.edu.bd/images/')) {
           const match = INITIAL_TEACHERS.find((it) => it.id === t.id || it.name === t.name);
           if (match) return { ...t, image: match.image };
         }

@@ -50,7 +50,7 @@ export default function ManagementPage() {
                     className="w-full h-full object-cover object-top"
                     onError={(e) => {
                       e.target.onerror = null;
-                      e.target.src = '/logo.jpg';
+                      e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(leader.name)}&background=1e3a8a&color=fff&size=200&bold=true`;
                     }}
                   />
                   <div className="absolute top-3 left-3 neu-badge text-[11px] font-bold bg-white/90 text-emerald-800">

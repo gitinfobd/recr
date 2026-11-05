@@ -110,7 +110,7 @@ export default function TeachersPage() {
                       className="w-full h-full object-cover"
                       onError={(e) => {
                         e.target.onerror = null;
-                        e.target.src = '/logo.jpg';
+                        e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(teacher.name)}&background=15803d&color=fff&size=200&bold=true`;
                       }}
                     />
                   </div>
