@@ -48,18 +48,19 @@ export default function Navbar() {
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setActiveDropdown(null);
-    }, 180);
+    }, 220);
   };
 
   const toggleDropdown = (name) => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
     setActiveDropdown((prev) => (prev === name ? null : name));
   };
 
   return (
-    <header className="sticky top-0 z-40 bg-[var(--neu-bg)]/95 backdrop-blur-md border-b border-[var(--neu-dark)]/30 shadow-sm">
-      <div className="max-w-7xl mx-auto px-3 py-2 flex flex-col md:flex-row md:items-center justify-between gap-2">
+    <header className="sticky top-0 z-40 bg-[var(--neu-bg)]/95 backdrop-blur-md border-b border-[var(--neu-dark)]/30 shadow-sm overflow-visible">
+      <div className="max-w-7xl mx-auto px-3 py-2 flex flex-col md:flex-row md:items-center justify-between gap-2 overflow-visible">
 
-        {/* Top Line: Brand on Left, Theme + Admin Login on Right */}
+        {/* Top / Left: Brand & Theme + Admin Login button */}
         <div className="flex items-center justify-between gap-2 shrink-0">
           {/* Logo & Brand */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
@@ -84,21 +85,21 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Right Action Controls: Theme + Admin Login in place of 3-line menu */}
+          {/* Theme & Admin Login buttons (in place of 3-line menu) */}
           <div className="flex items-center gap-1.5 md:order-last">
             <button
               onClick={toggleTheme}
-              className="neu-btn p-1.5 rounded-lg text-[var(--text-main)]"
+              className="neu-btn p-1.5 rounded-lg text-[var(--text-main)] cursor-pointer"
               title={isDark ? 'লাইট মোড' : 'ডার্ক মোড'}
               aria-label="Toggle theme"
             >
               {isDark ? <Sun className="w-3.5 h-3.5 text-amber-400" /> : <Moon className="w-3.5 h-3.5 text-slate-700" />}
             </button>
 
-            {/* Admin Login Button - Exactly in place of 3-line menu */}
+            {/* Admin Login Button */}
             <Link
               href="/admin"
-              className={`neu-btn py-1.5 px-3 rounded-lg text-[11px] font-bold flex items-center gap-1.5 transition-all ${
+              className={`neu-btn py-1.5 px-3 rounded-lg text-[11px] font-bold flex items-center gap-1.5 transition-all cursor-pointer ${
                 isAuthenticated
                   ? 'neu-pressed text-emerald-700 dark:text-emerald-400 border border-emerald-500/50'
                   : 'text-slate-700 dark:text-slate-300 hover:border-emerald-500'
@@ -111,16 +112,16 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Navigation Categories - Clean, perfectly aligned and 100% responsive */}
-        <nav className="flex items-center gap-1 overflow-x-auto pb-1 md:pb-0 scrollbar-none flex-nowrap md:flex-wrap">
+        {/* Navigation Categories - overflow-visible ensures dropdowns are NEVER clipped */}
+        <nav className="flex items-center gap-1.5 flex-wrap overflow-visible">
           {/* Home */}
-          <Link href="/" className="neu-btn py-1.5 px-2.5 text-[11px] shrink-0">
+          <Link href="/" className="neu-btn py-1.5 px-2.5 text-[11px] shrink-0 cursor-pointer">
             Home
           </Link>
 
           {/* 1. Management Dropdown */}
           <div
-            className="relative shrink-0"
+            className="relative shrink-0 overflow-visible"
             onMouseEnter={() => handleMouseEnter('management')}
             onMouseLeave={handleMouseLeave}
           >
@@ -139,38 +140,39 @@ export default function Navbar() {
               />
             </button>
 
+            {/* Dropdown Menu */}
             {activeDropdown === 'management' && (
               <div
-                className="absolute top-full left-0 pt-1.5 w-56 z-50 animate-in fade-in slide-in-from-top-1"
+                className="absolute top-full left-0 pt-1 w-60 z-50 animate-in fade-in slide-in-from-top-1"
                 onMouseEnter={() => handleMouseEnter('management')}
                 onMouseLeave={handleMouseLeave}
               >
-                <div className="neu-flat p-2 bg-[var(--neu-bg)] border border-[var(--neu-dark)]/40 shadow-xl rounded-xl flex flex-col gap-0.5">
+                <div className="neu-flat p-2 bg-[var(--neu-bg)] border border-[var(--neu-dark)]/50 shadow-2xl rounded-xl flex flex-col gap-0.5">
                   <Link
                     href="/management#leadership"
                     onClick={() => setActiveDropdown(null)}
-                    className="p-2 rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-950/40 text-[var(--text-main)] text-xs font-semibold"
+                    className="p-2 rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-950/40 text-[var(--text-main)] text-xs font-semibold cursor-pointer block transition-colors"
                   >
                     Board of Directors & Leadership
                   </Link>
                   <Link
                     href="/management#chairman"
                     onClick={() => setActiveDropdown(null)}
-                    className="p-2 rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-950/40 text-[var(--text-main)] text-xs font-semibold"
+                    className="p-2 rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-950/40 text-[var(--text-main)] text-xs font-semibold cursor-pointer block transition-colors"
                   >
                     Chairman&apos;s Profile
                   </Link>
                   <Link
                     href="/management#managingdirector"
                     onClick={() => setActiveDropdown(null)}
-                    className="p-2 rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-950/40 text-[var(--text-main)] text-xs font-semibold"
+                    className="p-2 rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-950/40 text-[var(--text-main)] text-xs font-semibold cursor-pointer block transition-colors"
                   >
                     Managing Director (MD)
                   </Link>
                   <Link
                     href="/teachers"
                     onClick={() => setActiveDropdown(null)}
-                    className="p-2 rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 font-bold text-xs flex items-center justify-between"
+                    className="p-2 rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 font-bold text-xs flex items-center justify-between cursor-pointer block transition-colors"
                   >
                     <span>Teachers & Faculty</span>
                     <span className="neu-badge text-[9px]">Real</span>
@@ -182,7 +184,7 @@ export default function Navbar() {
 
           {/* 2. Academics Dropdown */}
           <div
-            className="relative shrink-0"
+            className="relative shrink-0 overflow-visible"
             onMouseEnter={() => handleMouseEnter('academics')}
             onMouseLeave={handleMouseLeave}
           >
@@ -203,36 +205,36 @@ export default function Navbar() {
 
             {activeDropdown === 'academics' && (
               <div
-                className="absolute top-full left-0 pt-1.5 w-56 z-50 animate-in fade-in slide-in-from-top-1"
+                className="absolute top-full left-0 pt-1 w-64 z-50 animate-in fade-in slide-in-from-top-1"
                 onMouseEnter={() => handleMouseEnter('academics')}
                 onMouseLeave={handleMouseLeave}
               >
-                <div className="neu-flat p-2 bg-[var(--neu-bg)] border border-[var(--neu-dark)]/40 shadow-xl rounded-xl flex flex-col gap-0.5">
+                <div className="neu-flat p-2 bg-[var(--neu-bg)] border border-[var(--neu-dark)]/50 shadow-2xl rounded-xl flex flex-col gap-0.5">
                   <Link
                     href="/#departments"
                     onClick={() => setActiveDropdown(null)}
-                    className="p-2 rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-950/40 text-[var(--text-main)] text-xs font-semibold"
+                    className="p-2 rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-950/40 text-[var(--text-main)] text-xs font-semibold cursor-pointer block transition-colors"
                   >
                     Computer Science & Eng. (CSE)
                   </Link>
                   <Link
                     href="/#departments"
                     onClick={() => setActiveDropdown(null)}
-                    className="p-2 rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-950/40 text-[var(--text-main)] text-xs font-semibold"
+                    className="p-2 rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-950/40 text-[var(--text-main)] text-xs font-semibold cursor-pointer block transition-colors"
                   >
                     Electrical & Electronic Eng. (EEE)
                   </Link>
                   <Link
                     href="/#departments"
                     onClick={() => setActiveDropdown(null)}
-                    className="p-2 rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-950/40 text-[var(--text-main)] text-xs font-semibold"
+                    className="p-2 rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-950/40 text-[var(--text-main)] text-xs font-semibold cursor-pointer block transition-colors"
                   >
                     Civil Engineering (CE)
                   </Link>
                   <Link
                     href="/#departments"
                     onClick={() => setActiveDropdown(null)}
-                    className="p-2 rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-950/40 text-[var(--text-main)] text-xs font-semibold"
+                    className="p-2 rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-950/40 text-[var(--text-main)] text-xs font-semibold cursor-pointer block transition-colors"
                   >
                     Information & Comm. Eng. (ICE)
                   </Link>
@@ -241,9 +243,9 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* 3. Students Dropdown (Alumni is placed inside Students as requested) */}
+          {/* 3. Students Dropdown (Contains Students & Alumni) */}
           <div
-            className="relative shrink-0"
+            className="relative shrink-0 overflow-visible"
             onMouseEnter={() => handleMouseEnter('students')}
             onMouseLeave={handleMouseLeave}
           >
@@ -264,15 +266,15 @@ export default function Navbar() {
 
             {activeDropdown === 'students' && (
               <div
-                className="absolute top-full left-0 pt-1.5 w-52 z-50 animate-in fade-in slide-in-from-top-1"
+                className="absolute top-full left-0 pt-1 w-56 z-50 animate-in fade-in slide-in-from-top-1"
                 onMouseEnter={() => handleMouseEnter('students')}
                 onMouseLeave={handleMouseLeave}
               >
-                <div className="neu-flat p-2 bg-[var(--neu-bg)] border border-[var(--neu-dark)]/40 shadow-xl rounded-xl flex flex-col gap-0.5">
+                <div className="neu-flat p-2 bg-[var(--neu-bg)] border border-[var(--neu-dark)]/50 shadow-2xl rounded-xl flex flex-col gap-0.5">
                   <Link
                     href="/students"
                     onClick={() => setActiveDropdown(null)}
-                    className="p-2 rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-950/40 text-[var(--text-main)] text-xs font-semibold flex items-center gap-2"
+                    className="p-2 rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-950/40 text-[var(--text-main)] text-xs font-semibold flex items-center gap-2 cursor-pointer transition-colors"
                   >
                     <Users2 className="w-3.5 h-3.5 text-emerald-600" />
                     <span>Students Information</span>
@@ -280,7 +282,7 @@ export default function Navbar() {
                   <Link
                     href="/alumni"
                     onClick={() => setActiveDropdown(null)}
-                    className="p-2 rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-950/40 text-[var(--text-main)] text-xs font-semibold flex items-center gap-2"
+                    className="p-2 rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-950/40 text-[var(--text-main)] text-xs font-semibold flex items-center gap-2 cursor-pointer transition-colors"
                   >
                     <GraduationCap className="w-3.5 h-3.5 text-blue-600" />
                     <span>Alumni Network</span>
@@ -290,9 +292,9 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* 4. Notice Dropdown (Career is placed inside Notice as requested) */}
+          {/* 4. Notice Dropdown (Contains Notice & Career) */}
           <div
-            className="relative shrink-0"
+            className="relative shrink-0 overflow-visible"
             onMouseEnter={() => handleMouseEnter('notice')}
             onMouseLeave={handleMouseLeave}
           >
@@ -314,15 +316,15 @@ export default function Navbar() {
 
             {activeDropdown === 'notice' && (
               <div
-                className="absolute top-full left-0 pt-1.5 w-52 z-50 animate-in fade-in slide-in-from-top-1"
+                className="absolute top-full left-0 pt-1 w-56 z-50 animate-in fade-in slide-in-from-top-1"
                 onMouseEnter={() => handleMouseEnter('notice')}
                 onMouseLeave={handleMouseLeave}
               >
-                <div className="neu-flat p-2 bg-[var(--neu-bg)] border border-[var(--neu-dark)]/40 shadow-xl rounded-xl flex flex-col gap-0.5">
+                <div className="neu-flat p-2 bg-[var(--neu-bg)] border border-[var(--neu-dark)]/50 shadow-2xl rounded-xl flex flex-col gap-0.5">
                   <Link
                     href="/#notices"
                     onClick={() => setActiveDropdown(null)}
-                    className="p-2 rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-950/40 text-[var(--text-main)] text-xs font-semibold flex items-center gap-2"
+                    className="p-2 rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-950/40 text-[var(--text-main)] text-xs font-semibold flex items-center gap-2 cursor-pointer transition-colors"
                   >
                     <Bell className="w-3.5 h-3.5 text-amber-500" />
                     <span>Notice Board</span>
@@ -330,7 +332,7 @@ export default function Navbar() {
                   <Link
                     href="/career"
                     onClick={() => setActiveDropdown(null)}
-                    className="p-2 rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-950/40 text-[var(--text-main)] text-xs font-semibold flex items-center gap-2"
+                    className="p-2 rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-950/40 text-[var(--text-main)] text-xs font-semibold flex items-center gap-2 cursor-pointer transition-colors"
                   >
                     <Briefcase className="w-3.5 h-3.5 text-blue-600" />
                     <span>Career & Placement</span>
@@ -343,7 +345,7 @@ export default function Navbar() {
           {/* 5. Admissions 2026 Direct CTA */}
           <Link
             href="/#admission"
-            className="neu-btn py-1.5 px-2.5 text-emerald-700 dark:text-emerald-400 font-bold text-[11px] shrink-0"
+            className="neu-btn py-1.5 px-2.5 text-emerald-700 dark:text-emerald-400 font-bold text-[11px] shrink-0 cursor-pointer"
           >
             Admissions 2026
           </Link>

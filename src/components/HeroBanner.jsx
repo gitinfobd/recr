@@ -64,15 +64,15 @@ export default function HeroBanner() {
                       e.target.src = '/rec-head.jpg';
                     }}
                   />
-                  {/* Subtle Dark Gradient at Bottom */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                  {/* Deep Dark Gradient at Bottom to ensure text & badge are 100% readable on any light background */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent pointer-events-none"></div>
                   
                   {/* Slide Title Tag */}
                   <div className="absolute bottom-4 left-4 right-16 z-20 text-white">
-                    <span className="neu-badge text-[10px] bg-emerald-600 text-white font-bold mb-1 shadow">
+                    <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[11px] font-black bg-emerald-700 text-white border border-emerald-400/40 shadow-lg mb-1.5 backdrop-blur-md">
                       রংপুর ইঞ্জিনিয়ারিং কলেজ ক্যাম্পাস
                     </span>
-                    <h3 className="text-sm sm:text-base md:text-lg font-black leading-tight drop-shadow-md">
+                    <h3 className="text-sm sm:text-base md:text-lg font-black leading-tight drop-shadow-md text-white">
                       {slide.title}
                     </h3>
                   </div>
