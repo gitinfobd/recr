@@ -6,7 +6,6 @@ import Footer from '@/components/Footer';
 import Link from 'next/link';
 import {
   GraduationCap,
-  ShieldCheck,
   Search,
   Filter,
   UserPlus,
@@ -14,7 +13,6 @@ import {
   MapPin,
   Mail,
   CheckCircle,
-  AlertTriangle,
   ArrowRight,
   Briefcase
 } from 'lucide-react';
@@ -110,25 +108,6 @@ export default function AlumniPage() {
   return (
     <div className="min-h-screen flex flex-col bg-[var(--neu-bg)]">
       <Navbar />
-
-      {/* Security Incident Notice Banner */}
-      <div className="max-w-7xl mx-auto px-4 pt-4 w-full">
-        <div className="neu-flat border-l-4 border-emerald-600 bg-emerald-500/10 p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <ShieldCheck className="w-5 h-5 text-emerald-600 shrink-0" />
-            <p className="text-xs sm:text-sm text-[var(--text-main)] font-semibold">
-              <span className="font-bold text-emerald-700 dark:text-emerald-400">সুরক্ষিত প্রাতিষ্ঠানিক পোর্টাল:</span> পুরাতন পিএইচপি সাইটের <code>/alumni</code> পেজের ক্ষতিকর জুয়ার স্প্যাম সম্পূর্ণরূপে বর্জন করে এই অফিশিয়াল পেজটি চালু করা হয়েছে।
-            </p>
-          </div>
-          <Link
-            href="/audit-report"
-            className="neu-btn text-xs font-bold py-2 px-3 flex items-center gap-1.5 shrink-0 text-red-600 dark:text-red-400"
-          >
-            <AlertTriangle className="w-3.5 h-3.5" />
-            <span>অডিট রিপোর্ট দেখুন</span>
-          </Link>
-        </div>
-      </div>
 
       <main className="flex-1 max-w-7xl mx-auto px-4 py-8 w-full">
         {/* Header */}

@@ -494,18 +494,6 @@ export function DataProvider({ children }) {
       localStorage.setItem('recr_admin_session', JSON.stringify(user));
       return { success: true };
     } catch (fbErr) {
-      // Fallback for master admin static check
-      if (lower === MASTER_SUPERADMIN && password === 'ACBD507*') {
-        const user = {
-          email,
-          name: 'REC System Administrator',
-          role: 'MASTER_SUPERADMIN',
-          loggedInAt: new Date().toISOString()
-        };
-        setAdminUser(user);
-        localStorage.setItem('recr_admin_session', JSON.stringify(user));
-        return { success: true };
-      }
       return {
         success: false,
         message: 'ভুল ইমেইল বা পাসওয়ার্ড! সঠিক তথ্য দিয়ে আবার চেষ্টা করুন।'

@@ -32,3 +32,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# internal agent rules & security logs
+AGENTS.md
+RECR_CYBERSECURITY_AUDIT_REPORT.md
+reports/
+public/reports/
+scripts/audit_scanner.mjs
